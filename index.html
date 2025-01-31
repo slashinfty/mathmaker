@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MathMaker</title>
+    <meta name="description" content="Parametric exercise generator for secondary mathematics">
+    <meta name="author" content="Matt Braddock">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://latex.vercel.app/style.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header>
+        <h1>MathMaker</h1>
+    </header>
+    <div class="abstract">
+        <h2>About</h2>
+        <p>Parametric exercise generator for secondary mathematics.<br>Source code is available on <a href="https://github.com/slashinfty/mathmaker" target="_blank">GitHub</a>.</p>
+    </div>
+    <main>
+        <div id="button-div"><button id="dark-mode-toggle">Toggle dark mode</button></div>
+        <form>
+            <fieldset id="solving-quadratics">
+                <legend>Factoring & Solving Quadratics</legend>
+            </fieldset>
+            <fieldset id="right-triangle-trig">
+                <legend>Right Triangle Trigonometry</legend>
+            </fieldset>
+            <fieldset id="law-sines-cosines">
+                <legend>Law of Sines/Cosines</legend>
+            </fieldset>
+        </form>
+    </main>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="./index.js"></script>
+    <script>
+        document
+        .querySelector('#dark-mode-toggle')
+        .addEventListener('click', () => {
+            document.body.classList.toggle('latex-dark');
+        });
+    </script>
+</body>
+</html>
