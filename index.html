@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 
-<body>
+<body class="latex-dark">
     <header>
         <h1>MathMaker</h1>
     </header>
@@ -21,28 +21,76 @@
         <p>Parametric exercise generator for secondary mathematics.<br>Source code is available on <a href="https://github.com/slashinfty/mathmaker" target="_blank">GitHub</a>.</p>
     </div>
     <main>
-        <div id="button-div"><button id="dark-mode-toggle">Toggle dark mode</button></div>
         <form>
             <fieldset id="solving-quadratics">
                 <legend>Factoring & Solving Quadratics</legend>
+                <ul>
+                    <li><label for="quadratic-type-1">
+                        <input id="quadratic-type-1" name="quadratic-type" value="1" type="radio" checked />
+                        Factorable with $a=1$
+                    </label></li>
+                    <li><label for="quadratic-type-2">
+                        <input id="quadratic-type-2" name="quadratic-type" value="2" type="radio" />
+                        Factorable with $a\geq1$
+                    </label></li>
+                    <li><label for="quadratic-type-3">
+                        <input id="quadratic-type-3" name="quadratic-type" value="3" type="radio" />
+                        Irrational solutions
+                    </label></li>
+                    <li><label for="quadratic-type-4">
+                        <input id="quadratic-type-4" name="quadratic-type" value="4" type="radio" />
+                        Complex solutions
+                    </label></li>
+                    <li><label for="quadratic-gcf">
+                        <input id="quadratic-gcf" type="checkbox" />
+                        Possible GCF?
+                    </label></li>
+                    <li><label for="quadratic-larger">
+                        <input id="quadratic-larger" type="checkbox" />
+                        Increase range of values?
+                    </label></li>
+                </ul>
+                <p><button id="quadratic">Generate</button></p>
+                <div id="quadratic-placement"></div>
             </fieldset>
             <fieldset id="right-triangle-trig">
                 <legend>Right Triangle Trigonometry</legend>
+                <ul>
+                    <li><label for="trig-type-1">
+                        <input id="trig-type-1" name="trig-type" value="1" type="radio" checked />
+                        Given an angle and side
+                    </label></li>
+                    <li><label for="trig-type-2">
+                        <input id="trig-type-2" name="trig-type" value="2" type="radio" />
+                        Given two sides
+                    </label></li>
+                </ul>
             </fieldset>
             <fieldset id="law-sines-cosines">
                 <legend>Law of Sines/Cosines</legend>
+                <ul>
+                    <li><label for="laws-type-1">
+                        <input id="laws-type-1" name="laws-type" value="1" type="radio" checked />
+                        Given two angles and a side
+                    </label></li>
+                    <li><label for="laws-type-2">
+                        <input id="laws-type-2" name="laws-type" value="2" type="radio" />
+                        Given two sides and the included angle
+                    </label></li>
+                    <li><label for="laws-type-3">
+                        <input id="laws-type-3" name="laws-type" value="3" type="radio" />
+                        Given two sides and a non-included angle
+                    </label></li>
+                    <li><label for="laws-type-4">
+                        <input id="laws-type-4" name="laws-type" value="4" type="radio" />
+                        Given three sides
+                    </label></li>
+                </ul>
             </fieldset>
         </form>
     </main>
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="./index.js"></script>
-    <script>
-        document
-        .querySelector('#dark-mode-toggle')
-        .addEventListener('click', () => {
-            document.body.classList.toggle('latex-dark');
-        });
-    </script>
 </body>
 </html>
